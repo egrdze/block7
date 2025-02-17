@@ -245,12 +245,6 @@ body {
   }
 }
 
-.swiper-slide {
-  //box-repeater
-  flex: 1 1 20%;
-  margin: 10px;
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -281,17 +275,12 @@ body {
   display: flex;
   padding: 32px;
   margin: 0px;
-  gap: 16px !important;
+  gap: 16px;
 
   .swiper-wrapper {
     //плашки
-    display: grid;
-    grid-template-columns: repeat(4, 2fr);
-    // grid-template-rows: repeat(4, 2fr);
-    gap: 32px !important;
-    // padding-left: 32px !important;
-    width: 10px;
-    max-width: 600px;
+    display: flex;
+    gap: 32px;
   }
 
   .swiper-slide {
@@ -329,9 +318,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 240px !important;
-  height: 72px !important;
-  margin: 0 !important;
+  margin: 0;
   background-color: #ffffff;
   border-radius: 10px;
   border: 1px solid #eaeaea;
@@ -736,35 +723,54 @@ nav .sidebar {
 .swiper-container .swiper-wrapper {
   //плашки
   padding-left: 10px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: repeat(4, 1fr);
-  gap: 15px !important;
-  padding-left: 32px !important;
-  width: 100vw;
-  max-width: 600px;
+  display: flex;
+  gap: 15px;
+  padding-left: 32px;
 }
 
 @media screen and (max-width: 1440px) {
+  .swiper-container {
+    width: 100%;
+    max-width: 1440px;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  .swiper-slide {
+    width: calc(100% / 4) !important;
+    flex-shrink: 0;
+  }
+
   .swiper-container .swiper-slide {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 240px !important;
+    width: 224px !important;
     height: 72px !important;
-    margin: 0 !important;
+    align-items: center;
+    margin: 0;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #eaeaea;
     padding: 0 16px;
   }
-
-  .swiper-slide.hidden {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
+  .swiper-container {
+    width: 100%;
+    max-width: 768px;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
   .footer-titles {
     padding: 0 16px;
   }
@@ -796,9 +802,9 @@ nav .sidebar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 224px !important;
-    height: 72px !important;
-    margin: 0 !important;
+    width: 224px;
+    height: 72px;
+    margin: 0;
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #eaeaea;
@@ -854,7 +860,7 @@ nav .sidebar {
   }
 
   .swiper-container .swiper-wrapper {
-    display: grid;
+    display: flex;
     gap: 16px;
     max-width: 714px;
   }
@@ -931,6 +937,17 @@ nav .sidebar {
     width: 100%;
     max-width: 320px;
   }
+  .swiper-container {
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+
   .main_wrap {
     width: 320px;
   }

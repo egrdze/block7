@@ -1,7 +1,10 @@
+import { Grid } from 'swiper/modules'
 import '../scss/style.scss'
 
-document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper-container', {
+// Пример инициализации нескольких слайдеров
+document.querySelectorAll('.swiper-container').forEach((container) => {
+  new Swiper(container, {
+    spaceBetween: 16,
     breakpoints: {
       320: {
         slidesPerView: 1
@@ -9,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
       768: {
         slidesPerView: 3
       },
-      1024: {
-        slidesPerView: 3
-      },
       1440: {
+        grid: {
+          column: 4
+        },
         slidesPerView: 4
       }
     }
@@ -131,4 +134,25 @@ document.addEventListener('DOMContentLoaded', function () {
       isExpanded = !isExpanded
     })
   }
+
+  // Пример инициализации нескольких слайдеров
+  document.querySelectorAll('.swiper-container').forEach((container) => {
+    new Swiper(container, {
+      spaceBetween: 16,
+      breakpoints: {
+        320: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 3
+        },
+        1024: {
+          slidesPerView: 3
+        },
+        1440: {
+          slidesPerView: 4
+        }
+      }
+    })
+  })
 })
