@@ -21,6 +21,14 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
+.swiper-wrapper-box {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 50%;
+  gap: 32px;
+}
+
 .title__box__info--text--header {
   width: 100%;
   height: 100%;
@@ -184,6 +192,7 @@ body {
 .swiper-container-box {
   width: 100%;
   overflow: hidden;
+  max-width: 1440px;
 }
 
 .service-list {
@@ -250,6 +259,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  width: 240px;
+  height: 160px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -498,16 +509,6 @@ nav .sidebar {
 
 .text-block {
   width: 100%;
-}
-
-.card {
-  width: 250px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-  color: #333;
 }
 
 .card-title {
@@ -1052,7 +1053,6 @@ nav .sidebar {
     display: flex;
     flex-direction: column;
 
-    /* Stack elements vertically */
     gap: 16px;
 
     /* Space between elements */
