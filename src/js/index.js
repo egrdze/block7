@@ -4,19 +4,24 @@ import '../scss/style.scss'
 // Пример инициализации нескольких слайдеров
 document.querySelectorAll('.swiper-container').forEach((container) => {
   new Swiper(container, {
-    spaceBetween: 16,
+    spaceBetween: 4,
+    swiperOptions: { direction: 'horizontal' },
     breakpoints: {
       320: {
         slidesPerView: 1
       },
       768: {
-        slidesPerView: 3
+        grid: {
+          rows: 3,
+          fill: 'row'
+        }
       },
       1440: {
+        slidesPerView: 4,
         grid: {
-          column: 4
-        },
-        slidesPerView: 4
+          rows: 3,
+          fill: 'row'
+        }
       }
     }
   })
@@ -134,25 +139,4 @@ document.querySelectorAll('.swiper-container').forEach((container) => {
       isExpanded = !isExpanded
     })
   }
-
-  // Пример инициализации нескольких слайдеров
-  document.querySelectorAll('.swiper-container').forEach((container) => {
-    new Swiper(container, {
-      spaceBetween: 16,
-      breakpoints: {
-        320: {
-          slidesPerView: 1
-        },
-        768: {
-          slidesPerView: 3
-        },
-        1024: {
-          slidesPerView: 3
-        },
-        1440: {
-          slidesPerView: 4
-        }
-      }
-    })
-  })
 })
