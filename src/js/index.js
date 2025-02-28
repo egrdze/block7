@@ -21,13 +21,27 @@ const swiper1 = new Swiper('.swiper-container', {
 const swiper2 = new Swiper('.swiper-container-box', {
   wrapperClass: 'swiper-wrapper-box',
   slideClass: 'swiper-slide-box',
-
+  slidesOffsetAfter: 2,
   slidesPerView: 4,
   spaceBetween: 10,
   loop: true,
   pagination: {
     el: '.swiper-pagination',
     clickable: true
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    768: {
+      slidesPerView: 3,
+      centeredSlides: true
+    },
+    1440: {
+      slidesPerView: 'auto',
+      spaceBetween: 3
+    }
   },
   navigation: {
     nextEl: '.swiper-button-next',
