@@ -21,6 +21,7 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
 .service-item_names {
   display: flex;
   padding: 16px 0 0px 35px;
@@ -202,6 +203,7 @@ body {
 .inside__box {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .main__wrap {
@@ -224,6 +226,7 @@ body {
   margin: 32px;
   border-radius: 10px;
   overflow: hidden;
+  max-width: 1056px;
 }
 
 .commercial_text {
@@ -775,6 +778,14 @@ nav .sidebar {
 }
 
 @media screen and (max-width: 768px) {
+  .image-section {
+    width: 100%;
+    max-width: 768px;
+  }
+  .main_info {
+    display: flex;
+    justify-content: space-between;
+  }
   .service-item_names {
     display: flex;
     padding: 16px 0 0px 35px;
@@ -824,7 +835,7 @@ nav .sidebar {
     text-align: start;
   }
   .swiper-container {
-    width: 100%;
+    width: 106%;
     overflow: hidden;
   }
 
@@ -893,7 +904,7 @@ nav .sidebar {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    max-width: 768px;
+    max-width: 720px;
   }
 
   .header__container {
@@ -935,14 +946,19 @@ nav .sidebar {
     display: flex;
     justify-content: space-between;
   }
-
   .main_wrap {
     display: flex;
-    align-items: center;
+    flex-direction: row; /* text left, image right */
+    align-items: flex-start;
     gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 768px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  .main_info {
+    flex: 1 1 60%; /* for example, 60% width */
+  }
+  .image-section {
+    flex: 1 1 40%; /* for example, 40% width */
   }
 
   .image-section img {
@@ -983,6 +999,10 @@ nav .sidebar {
 
 @media screen and (max-width: 320px) {
   body {
+    width: 100%;
+    max-width: 320px;
+  }
+  .swiper-wrapper-box {
     width: 100%;
     max-width: 320px;
   }
@@ -1065,9 +1085,12 @@ nav .sidebar {
   }
 
   .main_wrap {
-    margin: 30px 25px 0 32px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack text above image by default */
+    width: 100%;
+    max-width: 320px; /* Constrain to 320px if desired */
+    margin: 0 auto; /* Center on small screens */
+    padding: 16px; /* Some breathing room */
   }
 
   .text-container {
