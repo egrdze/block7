@@ -54,10 +54,13 @@ body {
 }
 
 .title__box__info--text--header {
-  width: 100%;
-  height: 100%;
-  max-width: 1440px;
-  background-image: linear-gradient(#f8f8f8, #ffffff);
+  border-top: 1px solid #d9fff5;
+  background: linear-gradient(to right, #f8f8f8, white);
+  color: #7e7e82;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 20px 0 20px 20px;
+  font-size: 10px;
 }
 
 .header__text {
@@ -71,13 +74,25 @@ body {
   font-family: 'TT Lakes Bold', sans-serif;
   font-weight: 600;
 }
-.footer-titles {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px; /* Подгоняем под остальной контент */
-  margin: 0 auto 50px; /* Двигаем в центр */
+.footer-note {
+  font-family: 'TT Lakes', sans-serif;
+  color: #212121;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  max-width: 600px;
   padding: 20px;
+  margin: 0 auto;
+}
+
+.footer-titles {
+  font-size: 16px;
+  color: #212121;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 20px;
+  padding: 0 15px;
+  text-align: left;
 }
 
 .header__text--small {
@@ -343,7 +358,7 @@ body {
 }
 
 .title__box__info--text {
-  padding-left: 65px;
+  padding-left: 10px;
 }
 
 .swiper-container .swiper-slide {
@@ -747,6 +762,12 @@ nav .sidebar {
 }
 
 @media screen and (max-width: 1440px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-pagination-box {
+    display: none;
+  }
   .swiper-container {
     width: 100%;
     max-width: 1120px;
@@ -778,6 +799,9 @@ nav .sidebar {
 }
 
 @media screen and (max-width: 768px) {
+  .swiper-pagination {
+    display: none;
+  }
   .image-section {
     width: 100%;
     max-width: 768px;
@@ -815,6 +839,7 @@ nav .sidebar {
   .swiper-container-box {
     width: 100%;
     max-width: 768px;
+    overflow: hidden;
   }
   .swiper-wrapper-box {
     width: 100%;
@@ -835,13 +860,13 @@ nav .sidebar {
     text-align: start;
   }
   .swiper-container {
-    width: 106%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 768px;
+    padding: 10px;
   }
 
   .swiper-wrapper {
-    width: 100%;
-    max-width: 786px;
+    overflow: hidden;
   }
 
   .footer-titles {
@@ -933,15 +958,6 @@ nav .sidebar {
     display: none;
   }
 
-  .swiper-container-box {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .large_text {
-    display: none;
-  }
-
   .main__info {
     display: flex;
     justify-content: space-between;
@@ -1002,11 +1018,39 @@ nav .sidebar {
     width: 100%;
     max-width: 320px;
   }
+
+  .swiper-pagination {
+    position: absolute;
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    margin-top: 15px;
+  }
+
+  .swiper-pagination-box {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    margin-top: 16px;
+  }
+
+  .show_morebutton {
+    display: none;
+  }
+  .footer-titles {
+    font-size: 16px;
+    color: #212121;
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 20px;
+    padding: 0 15px;
+    text-align: left;
+  }
   .swiper-wrapper-box {
     width: 100%;
     max-width: 320px;
   }
   .swiper-container {
+    position: relative;
     width: 100%;
     max-width: 320px;
     overflow: hidden;
@@ -1015,6 +1059,7 @@ nav .sidebar {
   .swiper-wrapper {
     display: flex !important;
     flex-wrap: nowrap !important;
+    overflow: visible;
   }
 
   .main_wrap {
@@ -1131,91 +1176,93 @@ nav .sidebar {
     font-size: 10px;
     padding-left: 10px;
   }
-
   .service-list {
     display: none;
   }
-
   .service-card {
-    display: inline;
-    width: 250px;
-
-    /* Adjust width as needed */
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 320px; /* or adjust to the exact width of the card in your second image */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
+    padding: 16px;
+    background-color: white;
     display: flex;
     flex-direction: column;
-
-    gap: 16px;
-
-    /* Space between elements */
+    gap: 12px;
+    margin: 0 auto; /* Center the card horizontally */
+  }
+  .category,
+  .price-label,
+  .time-label {
+    font-size: 14px;
+    color: #9e9e9e;
   }
 
-  .service-card-title {
+  .category {
+    color: #9e9e9e;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .service-title {
+    color: #212121;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    color: #212121;
     font-size: 16px;
-    font-weight: bold;
-    color: #999;
-
-    /* Light gray color */
-    margin: 0;
+    font-weight: 500;
+    line-height: 1.3;
   }
 
-  .service-card-description {
-    font-size: 14px;
-    color: #333;
-    margin: 8px 0;
+  .price-value {
+    color: #212121;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
 
-  .service-card-details {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 4px 10px;
-  }
-
-  .service-card-price-label,
-  .service-card-time-label {
-    color: #999;
-    font-size: 14px;
-  }
-
-  .service-card-price-value,
-  .service-card-time-value {
-    color: #333;
-    font-size: 14px;
-  }
-
-  .service-card-button {
-    background-color: #f95a73;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 20px;
-    cursor: pointer;
+  .time-section {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    /* Make button full-width */
-    box-sizing: border-box;
-
-    span {
-      margin-left: 8px;
-      font-size: 16px;
-    }
+    justify-content: space-between;
+    gap: 10px;
   }
 
-  .service-card-box {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  .time-container {
+    flex-grow: 1;
+  }
+
+  .time-value {
+    color: #212121;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .order-button {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: white;
+    padding: 4px 25px 4px 12px;
+    background-color: #ff3e79;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    border: none;
+    cursor: pointer;
+  }
+
+  .order-button:hover {
+    background-color: #e04e6a;
   }
 
   .modal {

@@ -1,14 +1,18 @@
-import { Grid } from 'swiper/modules'
+import { Grid, Pagination } from 'swiper/modules'
 import '../scss/style.scss'
 import Swiper from 'swiper'
 
 document.addEventListener('DOMContentLoaded', function () {
   const swiper1 = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
     direction: 'horizontal',
     spaceBetween: 4,
-    modules: [Grid],
+    modules: [Grid, Pagination],
     breakpoints: {
-      320: { slidesPerView: 1 },
+      320: { slidesPerView: 4 },
       768: {
         grid: { rows: 3, fill: 'row' }
       },
@@ -23,11 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
     wrapperClass: 'swiper-wrapper-box',
     slideClass: 'swiper-slide-box',
     slidesOffsetAfter: 2,
+    slidesOffsetBefore: 32,
     slidesPerView: 4,
+    modules: [Grid, Pagination],
     spaceBetween: 10,
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination-box',
       clickable: true
     },
     breakpoints: {
@@ -41,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       1440: {
         slidesPerView: 'auto',
-        spaceBetween: 3
+        spaceBetween: 3,
+        loop: true
       }
     },
     navigation: {
