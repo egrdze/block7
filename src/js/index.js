@@ -56,6 +56,24 @@ document.addEventListener('DOMContentLoaded', function () {
       prevEl: '.swiper-button-prev'
     }
   })
+  const swiper3 = new Swiper('.swiper-service', {
+    wrapperClass: 'swiper-wrapper-service',
+    slideClass: 'swiper-slide-service',
+    slidesOffsetAfter: 2,
+    slidesOffsetBefore: 32,
+    slidesPerView: 2,
+    modules: [Grid, Pagination],
+    spaceBetween: 10,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination-service',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  })
 
   // Боковое меню
   const burgerMenu = document.querySelector('.header__burger__menu')
