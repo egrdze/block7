@@ -535,6 +535,13 @@ nav .sidebar {
   border: none;
   cursor: pointer; }
 
+.open-modal-btn-call {
+  font-size: 16px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer; }
+
 /* Modal Overlay */
 .modal-overlay,
 .modal-overlay-second {
