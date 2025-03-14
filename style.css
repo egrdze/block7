@@ -656,12 +656,14 @@ nav .sidebar {
   gap: 15px;
   padding-left: 32px; }
 
+.swiper-pagination-service {
+  display: none; }
+
+.swiper-pagination {
+  display: none; }
+
 @media screen and (max-width: 1440px) {
-  .swiper-pagination {
-    display: none; }
   .swiper-pagination-box {
-    display: none; }
-  .swiper-pagination-service {
     display: none; }
   .swiper-container {
     width: 100%;
@@ -686,8 +688,6 @@ nav .sidebar {
     padding: 0 16px; } }
 
 @media screen and (max-width: 768px) {
-  .swiper-pagination {
-    display: none; }
   .image-section {
     width: 100%;
     max-width: 768px; }
@@ -855,19 +855,16 @@ nav .sidebar {
     position: relative;
     display: flex;
     justify-content: center;
-    /* centers horizontally */
     margin-top: 15px; }
   .swiper-pagination {
     position: absolute;
     display: flex;
     justify-content: center;
-    /* centers horizontally */
     margin-top: 15px; }
   .swiper-pagination-box {
     position: relative;
     display: flex;
     justify-content: center;
-    /* centers horizontally */
     margin-top: 16px; }
   .show_morebutton {
     display: none; }
@@ -883,10 +880,9 @@ nav .sidebar {
     width: 100%;
     max-width: 320px; }
   .swiper-container {
-    position: relative;
     width: 100%;
     max-width: 320px;
-    overflow: hidden; }
+    position: relative; }
   .swiper-wrapper {
     display: flex !important;
     flex-wrap: nowrap !important;
